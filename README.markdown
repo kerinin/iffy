@@ -7,6 +7,7 @@ A plugin for jQuery for building FSM's in javascript - based on [Pluginaweek's s
 Usage
 =============
 NOTES
+
 * The problem here is obvious; we don't know what the user markup will be before 
   we recieve the successful login response
 
@@ -37,6 +38,7 @@ NOTES
     <a href='/login' id='login-button' onclick="$fsm.transition('login')">login</a>
 
 Things to be aware of
+
 * If multiple states define markup for different selectors (#header, #login_form, etc), the innerHTML 
   of these selectors will be set to null unless markup is defined.  IE, when the state 'no_user' is
   active, #login_form, #messages and #progress bar will all have their innerHTML cleared
