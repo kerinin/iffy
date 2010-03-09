@@ -6,10 +6,6 @@ A plugin for jQuery for building FSM's in javascript - based on [Pluginaweek's s
 
 Usage
 =============
-NOTES
-
-* The problem here is obvious; we don't know what the user markup will be before 
-  we recieve the successful login response
 
     <script type='text/javascript'>
       options = {
@@ -36,6 +32,23 @@ NOTES
     </script>
 
     <a href='/login' id='login-button' onclick="$fsm.transition('login')">login</a>
+
+State syntax:
+
+    $fsm_state( 'selector', 'markup');                                // parses the markup into a DOM node and inserts it inside selected elements
+    $fsm_state( 'selector', DOM_node);                                // inserts the node inside the selected elements
+    $fsm_state( 'selector', $other_state['other_state_selector'] );   // (inheritance) inserts the contents of $other_state into the selected elements 
+    $fsm_state( 'selector', this );                                   // (dynamic content) inserts this['selector'] into the selected elements
+    $fsm_state(['selector1','markup1'], ['selector2','markup2']);     // (multiple assignment) accepts any of the above syntaxes
+
+
+NOTES
+
+* what are the implications of allowing dynamic content?  My hope is that since the dynamic content is
+  restricted to a selector, and this selector will be over-written by any other states (excluding inheritance)
+  that this won't be a problem.  It may make sense to do one or the other though, or simply to prevent
+  dynamic content from being inherited.  Needs more thought...
+
 
 Things to be aware of
 
