@@ -2,7 +2,23 @@
 <head>
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="jquery.fsm.js"></script>
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $fsm = $(document).fsm();
+      $fsm.state('initial', '#to_change', 'Initial');
+      $fsm.state('state_1', '#to_change', 'State 1');
+      $fsm.state('state_2', '#to_change', 'State 2');
+      
+      $fsm.event('to_state_1', 'initial', 'state_1');
+      $fsm.event('to_state_2', 'initial', 'state_2');
+    });
+  </script>
 </head>
 <body>
+
+<button onclick="$fsm.to_state_1();">To State 1</button>
+<button onclick="$fsm.to_state_2();">To State 2</button>
+
+<h1 id="to_change">Initial</h1>
 </body>
 </html>
