@@ -132,4 +132,5 @@ can be natural-language conceptual descriptions which are refined into implement
 In this way implementation details can be changed without breaking the UI.
 
 1 http://blog.objectmentor.com/articles/2008/11/27/the-truth-about-bdd
+
 2 http://www.di.unipi.it/~boerger/Papers/Methodology/HighLevelDesign99.PDF
